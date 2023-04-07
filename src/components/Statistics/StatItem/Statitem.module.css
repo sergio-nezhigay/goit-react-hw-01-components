@@ -1,4 +1,4 @@
-.statistics {
+/* .statistics {
   color: #646b71;
   background-color: #fff;
 }
@@ -18,4 +18,17 @@
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+} */
+
+.item {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 6px;
+  justify-content: center;
+  padding: 14px 24px;
+}
+
+.percentage {
+  font-size: 18px;
 }

@@ -13,7 +13,7 @@ const FriendListItem = ({ avatar, name, isOnline }) => {
         alt={`${name} avatar`}
         width="48"
       />
-      <p className="name">{name}</p>
+      <p className={css.name}>{name}</p>
     </li>
   );
 };
