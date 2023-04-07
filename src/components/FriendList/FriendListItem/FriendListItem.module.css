@@ -1,0 +1,28 @@
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 48px 12px 12px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.item:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.avatar {
+  border-radius: 6px;
+}
+
+.status {
+  background-color: red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.online {
+  background-color: #53ad54;
+}
