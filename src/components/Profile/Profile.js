@@ -3,7 +3,13 @@ import PropTypes from 'prop-types';
 import css from './Profile.module.css';
 import ProfStats from './ProfStats';
 
-const Profile = ({ username, stats, tag, location, avatar }) => {
+const Profile = ({
+  username = 'Anonymous',
+  stats,
+  tag,
+  location = 'unknown',
+  avatar = 'https://i.pravatar.cc/100',
+}) => {
   return (
     <div className={css.profile}>
       <div className={css.description}>
@@ -18,17 +24,11 @@ const Profile = ({ username, stats, tag, location, avatar }) => {
 };
 
 Profile.propTypes = {
-  username: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  avatar: PropTypes.string.isRequired,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  avatar: PropTypes.string,
   stats: PropTypes.objectOf(PropTypes.number).isRequired,
-};
-
-Profile.defaultProps = {
-  username: 'Anonymous',
-  location: 'unknown',
-  avatar: 'https://i.pravatar.cc/100',
 };
 
 export default Profile;

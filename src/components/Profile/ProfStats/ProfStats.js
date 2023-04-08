@@ -6,7 +6,7 @@ const ProfStats = ({ stats }) => {
   return (
     <ul className={css.stats}>
       {Object.entries(stats).map(([label, quantity]) => (
-        <li>
+        <li key={label}>
           <span className={css.label}>{label}</span>
           <span className={css.quantity}>{quantity}</span>
         </li>
@@ -16,7 +16,7 @@ const ProfStats = ({ stats }) => {
 };
 
 ProfStats.propTypes = {
-  stats: PropTypes.objectOf(PropTypes.number),
+  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default ProfStats;

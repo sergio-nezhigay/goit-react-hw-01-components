@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import css from './FriendListItem.module.css';
 
 const FriendListItem = ({ avatar, name, isOnline }) => {
-  const onlineClass = isOnline ? css.online : '';
   return (
     <li className={css.item}>
-      <span className={`${css.status} ${onlineClass}`}></span>
+      <span className={isOnline ? css.online : css.offline}></span>
       <img
         className={css.avatar}
         src={avatar}

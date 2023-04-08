@@ -18,14 +18,19 @@
 }
 
 .status {
-  background-color: #ff0000;
   border-radius: 50%;
   width: 20px;
   height: 20px;
 }
 
 .online {
+  composes: status;
   background-color: #4daf4e;
+}
+
+.offline {
+  composes: status;
+  background-color: #ff0000;
 }
 
 .name {
