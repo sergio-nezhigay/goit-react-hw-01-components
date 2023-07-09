@@ -1,3 +1,4 @@
+import React from 'react';
 import css from './App.module.css';
 
 import Profile from '../Profile';

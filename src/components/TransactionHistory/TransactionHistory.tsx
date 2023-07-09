@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
-
 import css from './TransactionHistory.module.css';
 
-const TransactionHistory = ({ items }) => {
+interface ITransactionHistory {
+  items: { id: string; type: string; amount: string; currency: string }[];
+}
+
+const TransactionHistory: React.FC<ITransactionHistory> = ({ items }) => {
   return (
     <table className={css.transactionHistory}>
       <thead className={css.transactionHeader}>
@@ -24,17 +26,6 @@ const TransactionHistory = ({ items }) => {
       </tbody>
     </table>
   );
-};
-
-TransactionHistory.propTypes = {
-  items: PropTypes.arrayOf(
-    PropTypes.exact({
-      id: PropTypes.string.isRequired,
-      type: PropTypes.string.isRequired,
-      amount: PropTypes.string.isRequired,
-      currency: PropTypes.string.isRequired,
-    })
-  ).isRequired,
 };
 
 export default TransactionHistory;
