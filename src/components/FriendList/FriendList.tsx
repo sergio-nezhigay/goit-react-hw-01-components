@@ -1,10 +1,17 @@
-import PropTypes from 'prop-types';
-
 import FriendListItem from './FriendListItem';
 
 import css from './FriendList.module.css';
 
-const FriendList = ({ friends }) => {
+interface IFRiendList {
+  friends: {
+    id: number;
+    avatar: string;
+    name: string;
+    isOnline: boolean;
+  }[];
+}
+
+const FriendList: React.FC<IFRiendList> = ({ friends }) => {
   return (
     <ul className={css.friendList}>
       {friends.map(friend => (
@@ -17,16 +24,6 @@ const FriendList = ({ friends }) => {
       ))}
     </ul>
   );
-};
-
-FriendList.propTypes = {
-  friends: PropTypes.arrayOf(
-    PropTypes.shape({
-      avatar: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      isOnline: PropTypes.bool.isRequired,
-    })
-  ).isRequired,
 };
 
 export default FriendList;

@@ -1,4 +1,9 @@
-const getRandomColor = () => {
+interface IgetRandomColor {
+  backgroundColor: string;
+  color: string;
+}
+
+const getRandomColor = (): IgetRandomColor => {
   const hue = Math.floor(Math.random() * 360);
   const saturation = Math.floor(Math.random() * 50) + 50;
   const lightness = Math.floor(Math.random() * 30) + 35;

@@ -1,9 +1,13 @@
-import PropTypes from 'prop-types';
 import getRandomColor from './getRandomColor';
 
 import css from './Statitem.module.css';
 
-const StatItem = ({ label, percentage }) => {
+interface IStatItem {
+  label: string;
+  percentage: number;
+}
+
+const StatItem: React.FC<IStatItem> = ({ label, percentage }) => {
   const { backgroundColor, color } = getRandomColor();
   return (
     <li className={css.item} style={{ backgroundColor, color }}>
@@ -11,11 +15,6 @@ const StatItem = ({ label, percentage }) => {
       <span className={css.percentage}>{percentage}%</span>
     </li>
   );
-};
-
-StatItem.propTypes = {
-  label: PropTypes.string.isRequired,
-  percentage: PropTypes.number.isRequired,
 };
 
 export default StatItem;

@@ -1,9 +1,15 @@
-import PropTypes from 'prop-types';
-
 import css from './Profile.module.css';
 import ProfStats from './ProfStats';
 
-const Profile = ({
+interface IProfileProps {
+  username?: string;
+  stats: Record<string, number>;
+  tag?: string;
+  location?: string;
+  avatar?: string;
+}
+
+const Profile: React.FC<IProfileProps> = ({
   username = 'Anonymous',
   stats,
   tag,
@@ -21,14 +27,6 @@ const Profile = ({
       <ProfStats stats={stats} />
     </div>
   );
-};
-
-Profile.propTypes = {
-  username: PropTypes.string,
-  tag: PropTypes.string,
-  location: PropTypes.string,
-  avatar: PropTypes.string,
-  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default Profile;

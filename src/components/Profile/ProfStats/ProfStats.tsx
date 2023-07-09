@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
-
 import css from './ProfStats.module.css';
 
-const ProfStats = ({ stats }) => {
+interface IProfStatsProps {
+  stats: Record<string, number>;
+}
+
+const ProfStats: React.FC<IProfStatsProps> = ({ stats }) => {
   return (
     <ul className={css.stats}>
       {Object.entries(stats).map(([label, quantity]) => (
@@ -13,10 +15,6 @@ const ProfStats = ({ stats }) => {
       ))}
     </ul>
   );
-};
-
-ProfStats.propTypes = {
-  stats: PropTypes.objectOf(PropTypes.number).isRequired,
 };
 
 export default ProfStats;
